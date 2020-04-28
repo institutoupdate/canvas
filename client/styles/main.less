@@ -277,17 +277,25 @@ h4 {
   #app-header {
     padding: 1.5rem;
     z-index: 10;
-    font-size: 0.8em;
+    font-size: 0.9em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .label {
       display: none;
     }
     .download {
+      margin: 1rem 0 0;
+      display: block;
+      width: 100%;
+      text-align: center;
       .fa {
         margin: 0 0.5rem 0 0;
         display: none;
       }
       a {
-        padding: 0.5rem;
+        display: block;
+        width: auto;
         margin: 0 0 0 0.5rem;
         .fa {
           margin-right: 0.25rem;

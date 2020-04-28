@@ -69,6 +69,12 @@ const Content = styled.section`
   border: 1px solid #333;
   position: relative;
   z-index: 10;
+  @media only screen and (max-width: 700px) {
+    border-radius: 0;
+    margin: 0;
+    font-size: 0.9em;
+    padding: 2rem 1rem;
+  }
 `;
 
 const Button = styled.a`
@@ -170,6 +176,9 @@ const PaperSelector = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 700px) {
+    margin: 0;
+  }
 `;
 
 const GridContainer = styled.div`
@@ -193,6 +202,7 @@ const SelectOutput = styled.div`
   justify-content: center;
   margin: 2rem 0;
   font-size: 0.9em;
+  line-height: 1.2;
   label {
     padding: 0 2rem;
     display: flex;

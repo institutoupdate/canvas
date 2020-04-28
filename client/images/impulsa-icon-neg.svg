@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg2448"
+   version="1.1"
+   viewBox="0 0 20.804218 10.336804"
+   height="10.336803mm"
+   width="20.804218mm">
+  <defs
+     id="defs2442" />
+  <metadata
+     id="metadata2445">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-104.93582,-61.883325)"
+     id="layer1">
+    <g
+       transform="matrix(0.35277777,0,0,-0.35277777,125.2913,66.302097)"
+       id="g2002">
+      <path
+         id="path2004"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 -20.826,12.024 c -1.696,0.979 -3.817,-0.244 -3.817,-2.203 v -24.049 c 0,-1.958 2.121,-3.182 3.817,-2.203 L 0,-4.406 C 1.696,-3.427 1.696,-0.979 0,0" />
+    </g>
+    <g
+       transform="matrix(0.35277777,0,0,-0.35277777,114.81031,66.267982)"
+       id="g2006">
+      <path
+         id="path2008"
+         style="fill:#bebebe;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 -20.189,-11.943 c -1.445,-0.854 -3.27,0.187 -3.27,1.864 v 20.338 c 0,1.678 1.825,2.719 3.27,1.865 L 0,0.18 C 0.068,0.14 0.068,0.041 0,0" />
+    </g>
+    <g
+       transform="matrix(0.35277777,0,0,-0.35277777,105.43034,69.198401)"
+       id="g2010">
+      <path
+         id="path2012"
+         style="fill:#dcdcdc;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 v 7.767 c 0,1.315 1.083,2.38 2.419,2.38 L 26.741,8.396" />
+    </g>
+    <g
+       transform="matrix(0.35277777,0,0,-0.35277777,114.86404,66.236126)"
+       id="g2014">
+      <path
+         id="path2016"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 0,0 -26.515,-7.871 c -0.965,-0.287 -1.628,-1.175 -1.628,-2.182 v -6.084 c 0,-0.439 0.423,-0.755 0.844,-0.63 l 25.987,7.715 C -0.534,-8.821 0,-8.106 0,-7.294 Z" />
+    </g>
+  </g>
+</svg>

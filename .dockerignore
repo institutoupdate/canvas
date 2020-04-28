@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+public
+dist
+.data
+*.rdb
+files
+.babel.json

@@ -1,0 +1,354 @@
+@import "colors";
+
+html,
+body,
+#app,
+#app > .container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  width: auto;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+#app-header {
+  background: @mainColor;
+  border-bottom: 1px solid darken(@mainColor, 10%);
+  color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  flex: 0 0 auto;
+  a {
+    color: rgba(255, 255, 255, 0.8);
+    &:hover {
+      color: #fff;
+    }
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    a {
+      text-decoration: none;
+    }
+    h1 {
+      margin: 0 2rem 0 0;
+      img {
+        display: block;
+        width: 150px;
+        height: auto;
+        margin: 0;
+        &.color {
+          display: none;
+        }
+      }
+    }
+    h2 {
+      font-size: 0.8em;
+      font-weight: 300;
+      color: @blue;
+      line-height: 1;
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+  .divider {
+    margin-left: auto;
+  }
+  .header-nav {
+    margin-right: 4rem;
+    font-size: 0.9em;
+    a {
+      display: inline-block;
+      background: darken(@mainColor, 5%);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 4px;
+      &:hover {
+        background: darken(@mainColor, 10%);
+        color: #fff;
+      }
+    }
+  }
+  .download {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    .fa {
+      margin: 0 1rem 0 0;
+      font-size: 1.5em;
+    }
+    a {
+      padding: 0.5rem 1rem;
+      margin: 0 0 0 1rem;
+      border-radius: 4px;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      outline: none;
+      font-weight: 600;
+      background: @orange;
+      &:hover,
+      &:active,
+      &:focus {
+        color: #fff;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+      }
+      .fa {
+        font-size: 1em;
+        margin: 0 0.5rem 0 0;
+        line-height: 1;
+      }
+    }
+    .label {
+      font-size: 0.7em;
+      margin-right: -0.5rem;
+      background: rgba(255, 255, 255, 0.075);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 1rem;
+      color: rgba(255, 255, 255, 0.4);
+      float: right;
+    }
+  }
+}
+
+#app-footer {
+  background: #222;
+  flex: 0 0 auto;
+  padding: 1rem;
+  color: #f0f0f0;
+  text-align: right;
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  p {
+    margin: 0 1rem;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .fa {
+    margin-right: 1rem;
+    font-size: 1.2em;
+    color: #fff;
+  }
+  img {
+    height: 1em;
+    width: auto;
+    margin-right: 1rem;
+    &.color {
+      display: none;
+    }
+  }
+}
+
+.app-container {
+  flex: 1 1 100%;
+  overflow: auto;
+  position: relative;
+  &.not-found {
+    box-sizing: border-box;
+    color: #fff;
+    padding: 4rem;
+    text-align: center;
+  }
+}
+
+.data-canvas-container {
+  width: 100%;
+  height: 100%;
+  .data-canvas {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-shadow: 0 0 0;
+  }
+}
+
+.canvas-container {
+  height: 100%;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 701px) {
+  body {
+    background: #333;
+  }
+  .canvas-container {
+    background: #fff;
+  }
+  .canvas-container:not(.with-data) {
+    transform: scale(0.9);
+    transform-origin: center;
+    animation: 0.3s ease-in 0.1s 1 pop forwards;
+  }
+  .data-canvas-container {
+    width: 95%;
+    margin: 0 auto;
+    .data-canvas {
+      // width: 42cm;
+      // height: 29.7cm;
+      width: 1587px;
+      height: 1123px;
+      margin: 4rem 0;
+      transform-origin: left top 0px;
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
+      -webkit-backface-visibility: hidden;
+      -webkit-font-smoothing: subpixel-antialiased;
+      .canvas-container {
+        border-radius: 6px;
+        .canvas-row.colored {
+          border-radius: 6px 6px 0 0;
+        }
+      }
+      .canvas-item:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  #app-footer {
+    box-shadow: 0 0 5rem rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Mobile
+@media only screen and (max-width: 700px) {
+  html,
+  body,
+  #app,
+  #app > .container {
+    height: auto;
+    overflow: auto;
+  }
+  .app-container,
+  .data-canvas,
+  .canvas-container {
+    margin: 0;
+    height: auto;
+  }
+  .data-canvas-container {
+    height: auto;
+    .data-canvas {
+      height: auto;
+      transform: scale(1) !important;
+    }
+  }
+  #app-header {
+    padding: 1.5rem;
+    z-index: 10;
+    font-size: 0.8em;
+    .label {
+      display: none;
+    }
+    .download {
+      .fa {
+        margin: 0 0.5rem 0 0;
+        display: none;
+      }
+      a {
+        padding: 0.5rem;
+        margin: 0 0 0 0.5rem;
+        .fa {
+          margin-right: 0.25rem;
+          display: inline-block;
+        }
+      }
+    }
+    .header-nav {
+      display: none;
+    }
+  }
+  #app-footer {
+    height: auto;
+    padding: 1rem 0;
+    flex-direction: column;
+    position: static;
+    > * {
+      padding: 0.5rem 0;
+    }
+  }
+}
+
+@media only print {
+  @page {
+    margin: 0;
+    size: landscape;
+  }
+  #app-header {
+    background: none;
+    border: 0;
+    padding: 0.3cm;
+    a {
+      color: #000;
+    }
+    h1,
+    h2,
+    img {
+      margin: 0 0.3cm 0 0;
+    }
+    .title h1 img.color {
+      display: block;
+    }
+    .title h1 img.neg {
+      display: none;
+    }
+    .header-nav {
+      display: none;
+    }
+  }
+  #app-footer {
+    background: #fff;
+    color: #999;
+    .fa {
+      color: #333;
+    }
+    img.neg {
+      display: none;
+    }
+    img.color {
+      display: inline;
+    }
+  }
+  .data-canvas-container {
+    .data-canvas {
+      transform: scale(1) !important;
+    }
+  }
+  .download {
+    display: none !important;
+  }
+}

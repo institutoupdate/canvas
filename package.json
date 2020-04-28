@@ -1,0 +1,74 @@
+{
+  "name": "electoral-canvas",
+  "version": "0.1.0",
+  "description": "Electoral canvas methodology built with react-flexcanvas and puppeteer.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "rm -rf public/* dist/*",
+    "build": "npm run setup && cross-env NODE_ENV=production webpack --config webpack.config.js --mode=production && babel src -d dist --copy-files",
+    "serve": "cross-env NODE_ENV=production node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lianetoolkit/electoral-canvas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lianetoolkit/electoral-canvas/issues"
+  },
+  "homepage": "https://github.com/lianetoolkit/electoral-canvas#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "connect-history-api-fallback": "^1.6.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.5.2",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.2.0",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "node-sass": "^4.14.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.4",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.15",
+    "nodemon": "^2.0.3",
+    "puppeteer": "^3.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-flexcanvas": "^0.3.4",
+    "react-markdown": "^4.3.1",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "remark-breaks": "^1.0.5",
+    "skeleton-css": "^2.0.4",
+    "styled-components": "^5.1.0",
+    "underscore": "^1.10.2"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "files/*"
+    ],
+    "delay": "1000"
+  }
+}

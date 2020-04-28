@@ -10,7 +10,7 @@ export default class Footer extends React.Component {
         <p>
           <img className="neg" src={iconNeg.default} alt="Impulsa" />
           <img className="color" src={iconColor.default} alt="Impulsa" />
-          <a href="https://fermenta.voto">https://fermenta.voto</a>
+          <a href="https://impulsa.voto">https://impulsa.voto</a>
         </p>
         <p>
           <span className="fa fa-github" />

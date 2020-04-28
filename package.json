@@ -1,5 +1,5 @@
 {
-  "name": "electoral-canvas",
+  "name": "canvas",
   "version": "0.1.0",
   "description": "Electoral canvas methodology built with react-flexcanvas and puppeteer.",
   "main": "index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lianetoolkit/electoral-canvas.git"
+    "url": "git+https://github.com/institutoupdate/canvas.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lianetoolkit/electoral-canvas/issues"
+    "url": "https://github.com/institutoupdate/canvas/issues"
   },
-  "homepage": "https://github.com/lianetoolkit/electoral-canvas#readme",
+  "homepage": "https://github.com/institutoupdate/canvas#readme",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",

@@ -17,6 +17,7 @@ Electoral Canvas built with [react-flexcanvas](https://github.com/miguelpeixe/re
 #### Dependencies
 
 - Node (v8 or newer)
+- [pdfposter](https://gitlab.com/pdftools/pdfposter)
 
 ---
 

@@ -43,6 +43,7 @@ export default function () {
               return <Canvas id={match.params.id} />;
             }}
           />
+          <Route component={NotFound} />
         </Switch>
         {query.get("download") ? <Download /> : null}
       </div>

@@ -8,7 +8,7 @@ export default class Canvas extends React.Component {
       <FlexCanvas data={{}}>
         <FlexCanvas.Row widths="equal" color="blue" attached="top">
           <FlexCanvas.Item title="Nome da candidata" color="blue" />
-          <FlexCanvas.Item title="Cargo que concorre" color="blue" />
+          <FlexCanvas.Item title="Cargo a que concorre" color="blue" />
           <FlexCanvas.Item title="Local" color="blue" />
           <FlexCanvas.Item title="Partido" color="blue" />
           <FlexCanvas.Item title="Número" color="blue" />
@@ -41,12 +41,10 @@ export default class Canvas extends React.Component {
                 </FlexCanvas.FieldGroup>
                 <FlexCanvas.Field title="Uma experiência de vida" grow={2} />
               </FlexCanvas.Item>
-              <FlexCanvas.Item
-                title="Diferenciais de campanha"
-                grow={1}
-                details={<Details.Assets />}
-              >
-                <FlexCanvas.Field title="O que eu tenho que meus competidores não tem" />
+              <FlexCanvas.Item title="Canais" details={<Details.Channels />}>
+                <FlexCanvas.Field title="Redes sociais" />
+                <FlexCanvas.Field title="Outras ferramentas" />
+                <FlexCanvas.Field title="Redes temáticas e territoriais" />
               </FlexCanvas.Item>
             </FlexCanvas.Row>
             <FlexCanvas.Row grow={2}>
@@ -74,10 +72,12 @@ export default class Canvas extends React.Component {
               >
                 <FlexCanvas.List title="Perfil" amount={3} />
               </FlexCanvas.Item>
-              <FlexCanvas.Item title="Canais" details={<Details.Channels />}>
-                <FlexCanvas.Field title="Redes sociais" />
-                <FlexCanvas.Field title="Outras ferramentas" />
-                <FlexCanvas.Field title="Rede temáticas e territoriais" />
+              <FlexCanvas.Item
+                title="Diferenciais de campanha"
+                grow={1}
+                details={<Details.Assets />}
+              >
+                <FlexCanvas.Field title="O que eu tenho que meus competidores não têm" />
               </FlexCanvas.Item>
             </FlexCanvas.Row>
             <FlexCanvas.Row grow={1}>
@@ -95,7 +95,7 @@ export default class Canvas extends React.Component {
                 color="green"
                 details={<Details.Funders />}
               >
-                <FlexCanvas.Field title="Lista de atividades de captação" />
+                <FlexCanvas.Field title="Lista de atividades de captação de recursos" />
               </FlexCanvas.Item>
             </FlexCanvas.Row>
           </FlexCanvas.Column>

@@ -104,7 +104,7 @@ const PaperSelector = styled.div`
   &.has-format {
     .papers .paper-container .paper {
       opacity: 0.3;
-      border-color: #222;
+      border-color: transparent;
     }
     .papers .paper-container.selected .paper {
       opacity: 1;
@@ -134,7 +134,7 @@ const PaperSelector = styled.div`
       &:active,
       &:hover {
         .paper {
-          background-color: rgba(255, 255, 255, 0.05);
+          background-color: rgba(255, 255, 255, 0.08);
           box-shadow: 0 0 0.6rem #e00a69;
         }
       }

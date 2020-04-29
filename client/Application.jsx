@@ -27,11 +27,13 @@ class App extends React.Component {
     const { location } = this.props;
     const query = new URLSearchParams(location.search);
     let appStyle = {};
+    let className = "container";
     if (query.get("download")) {
       appStyle = { overflow: "hidden" };
+      className += " download";
     }
     return (
-      <div className="container">
+      <div className="container" className={className}>
         <Header />
         <div className="app-container" ref={this.containerRef} style={appStyle}>
           <Switch>

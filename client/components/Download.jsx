@@ -77,6 +77,7 @@ const Content = styled.section`
   position: relative;
   z-index: 10;
   @media only screen and (max-width: 700px) {
+    max-width: none;
     border-radius: 0;
     margin: 0;
     font-size: 0.9em;
@@ -89,6 +90,8 @@ const Content = styled.section`
       flex: 1 1 100%;
       align-items: center;
       justify-content: center;
+      display: flex;
+      flex-direction: column;
     }
   }
 `;
@@ -120,9 +123,9 @@ const Button = styled.a`
 `;
 
 const PaperSelector = styled.div`
+  max-width: 500px;
   margin: 0 6rem;
   position: relative;
-  background: rgba(255, 255, 255, 0.05);
   &.has-format {
     .papers .paper-container .paper {
       opacity: 0.3;
@@ -136,6 +139,7 @@ const PaperSelector = styled.div`
     }
   }
   .papers {
+    background: rgba(255, 255, 255, 0.05);
     position: relative;
     width: 100%;
     padding-top: 70.707%;
@@ -193,7 +197,11 @@ const PaperSelector = styled.div`
     }
   }
   @media only screen and (max-width: 700px) {
-    margin: 0;
+    margin: 0 auto;
+    flex: 1 1 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
   }
 `;
 
@@ -227,6 +235,13 @@ const SelectOutput = styled.div`
     font-weight: normal;
     input {
       margin: 0 1rem 0 0;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+    align-items: flex-start;
+    label {
+      padding: 0 2rem 1rem;
     }
   }
 `;

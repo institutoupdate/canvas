@@ -253,6 +253,15 @@ h4 {
 }
 
 // Mobile
+@media only screen and (max-width: 480px) {
+  #app-header {
+    font-size: 5vw;
+  }
+  .app-container {
+    font-size: 4.5vw;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .data-canvas-container {
     height: auto;
@@ -260,6 +269,9 @@ h4 {
       height: auto;
       transform: scale(1) !important;
     }
+  }
+  .container.download #app-header .download {
+    display: none;
   }
   #app-header {
     padding: 1.5rem;

@@ -254,19 +254,6 @@ h4 {
 
 // Mobile
 @media only screen and (max-width: 700px) {
-  html,
-  body,
-  #app,
-  #app > .container {
-    height: auto;
-    overflow: auto;
-  }
-  .app-container,
-  .data-canvas,
-  .canvas-container {
-    margin: 0;
-    height: auto;
-  }
   .data-canvas-container {
     height: auto;
     .data-canvas {
@@ -277,7 +264,6 @@ h4 {
   #app-header {
     padding: 1.5rem;
     z-index: 10;
-    font-size: 0.9em;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -290,15 +276,13 @@ h4 {
       width: 100%;
       text-align: center;
       [data-icon] {
-        margin: 0 0.5rem 0 0;
         display: none;
       }
       a {
         display: block;
         width: auto;
-        margin: 0 0 0 0.5rem;
+        margin: 0;
         [data-icon] {
-          margin-right: 0.25rem;
           display: inline-block;
         }
       }
@@ -308,10 +292,12 @@ h4 {
     }
   }
   #app-footer {
-    height: auto;
-    padding: 1rem 0;
+    font-size: 0.8em;
+    padding: 0.5rem 0;
     flex-direction: column;
-    position: static;
+    .github {
+      display: none;
+    }
     > * {
       padding: 0.5rem 0;
     }

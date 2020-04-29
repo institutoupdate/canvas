@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <footer id="app-footer">
-        <p>
+        <p className="impulsa">
           <img className="neg" src={iconNeg.default} alt="Impulsa" />
           <img className="color" src={iconColor.default} alt="Impulsa" />
           <a
@@ -20,7 +20,7 @@ export default class Footer extends React.Component {
             https://impulsa.voto
           </a>
         </p>
-        <p>
+        <p className="github">
           <FontAwesomeIcon icon={["fab", "github"]} />
           <a
             href="https://github.com/institutoupdate/canvas"

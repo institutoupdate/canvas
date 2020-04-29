@@ -1,10 +1,8 @@
 version: '2'
 services:
   app:
-    image: miguelpeixe/electoral-canvas:latest
+    image: miguelpeixe/impulsa-canvas:latest
     build: .
     command: npm start
-    links:
-    - redis
     ports:
     - 8000:8000

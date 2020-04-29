@@ -6,9 +6,13 @@ ARG GID=991
 ENV NODE_ENV=production
 ENV URL=http://localhost:8000
 ENV CHROME_PATH=/usr/bin/google-chrome-unstable
+ENV PUPPETEER_SKIP_DOWNLOAD=true
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
+    make \
+    g++ \
+    libvips-dev \
     gnupg2 \
     pdfposter \
     wget \

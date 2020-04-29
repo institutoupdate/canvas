@@ -57,6 +57,12 @@ const Container = styled.div`
     right: 0;
     bottom: 0;
   }
+  @media only screen and (max-width: 700px) {
+    display: flex;
+    header {
+      margin: 0 1rem 2rem;
+    }
+  }
 `;
 
 const Content = styled.section`
@@ -74,7 +80,16 @@ const Content = styled.section`
     border-radius: 0;
     margin: 0;
     font-size: 0.9em;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem;
+    flex: 1 1 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    .selector-container {
+      flex: 1 1 100%;
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 

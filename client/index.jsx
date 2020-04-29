@@ -8,7 +8,13 @@ import React from "react";
 import ReactDom from "react-dom";
 
 if (process.env.NODE_ENV == "production") {
-  require("offline-plugin/runtime").install();
+  const OfflinePluginRuntime = require("offline-plugin/runtime");
+  OfflinePluginRuntime.install({
+    onUpdateReady: () => OfflinePluginRuntime.applyUpdate(),
+    onUpdated: () => {
+      window.location.reload();
+    },
+  });
 }
 
 import { library } from "@fortawesome/fontawesome-svg-core";

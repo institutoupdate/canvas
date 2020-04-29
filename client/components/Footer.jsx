@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const iconNeg = require("images/impulsa-icon-neg.svg");
 const iconColor = require("images/impulsa-icon-color.svg");
@@ -20,7 +21,7 @@ export default class Footer extends React.Component {
           </a>
         </p>
         <p>
-          <span className="fa fa-github" />
+          <FontAwesomeIcon icon={["fab", "github"]} />
           <a
             href="https://github.com/institutoupdate/canvas"
             rel="external"

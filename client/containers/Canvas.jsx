@@ -2,7 +2,7 @@ import React from "react";
 import Canvas from "components/Canvas.jsx";
 import NotFound from "components/NotFound.jsx";
 import axios from "axios";
-import { debounce } from "lodash";
+import debounce from "lodash.debounce";
 
 export default class CanvasContainer extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ export default class CanvasContainer extends React.Component {
     this.state = {
       errored: false,
       loading: false,
-      scale: 1
+      scale: 1,
     };
     this.containerRef = React.createRef();
     this.canvasRef = React.createRef();
@@ -20,18 +20,18 @@ export default class CanvasContainer extends React.Component {
     this.setState({ loading: true });
     axios
       .get(`/api/${id}`)
-      .then(res => {
+      .then((res) => {
         this.setState({
           loading: false,
-          data: res.data
+          data: res.data,
         });
         this._scale();
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({
           errored: true,
           loading: false,
-          data: null
+          data: null,
         });
       });
   }
@@ -40,14 +40,14 @@ export default class CanvasContainer extends React.Component {
       const container = this.containerRef.current;
       if (container) {
         const width = container.offsetWidth;
-        const scale = Math.floor(width / 1587 * 100) / 100;
+        const scale = Math.floor((width / 1587) * 100) / 100;
         this.setState({ scale });
       }
     },
     100,
     {
       leading: true,
-      trailing: true
+      trailing: true,
     }
   );
   componentDidMount() {
@@ -67,7 +67,7 @@ export default class CanvasContainer extends React.Component {
         this._update(nextProps.id);
       } else {
         this.setState({
-          data: null
+          data: null,
         });
       }
     }
@@ -93,7 +93,7 @@ export default class CanvasContainer extends React.Component {
               className="data-canvas"
               ref={this.canvasRef}
               style={{
-                transform: `perspective(1px) translateZ(0) scale(${scale},${scale})`
+                transform: `perspective(1px) translateZ(0) scale(${scale},${scale})`,
               }}
             >
               <Canvas data={data} />

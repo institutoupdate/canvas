@@ -1,7 +1,7 @@
-import React from "react";
-
 import "skeleton-css/css/normalize.css";
 import "skeleton-css/css/skeleton.css";
+
+import React from "react";
 
 import { Switch, Route, useLocation } from "react-router-dom";
 
@@ -9,12 +9,11 @@ import NotFound from "components/NotFound.jsx";
 import Header from "components/Header.jsx";
 import Footer from "components/Footer.jsx";
 
-import Canvas from "containers/Canvas.jsx";
+import Canvas from "components/Canvas.jsx";
 import Download from "components/Download.jsx";
 
 import "styles/canvas.less";
 import "styles/main.less";
-import "styles/font-awesome.scss";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -40,7 +39,7 @@ export default function () {
               if (!/\b[0-9a-f]{5,40}\b$/.test(match.params.id)) {
                 return <NotFound />;
               }
-              return <Canvas id={match.params.id} />;
+              return <Canvas />;
             }}
           />
           <Route component={NotFound} />

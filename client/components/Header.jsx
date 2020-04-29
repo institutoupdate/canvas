@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { withRouter, matchPath, Link } from "react-router-dom";
 
 const logoNeg = require("images/impulsa-neg.svg");
@@ -47,7 +48,7 @@ class Header extends React.Component {
         </nav> */}
         <nav className="download">
           <Link to={`${location.pathname}?download=1`}>
-            <span className="fa fa-file-pdf-o" /> Baixar para impressão
+            <FontAwesomeIcon icon="file-pdf" /> Baixar para impressão
           </Link>
         </nav>
       </header>

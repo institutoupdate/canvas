@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { withRouter, matchPath, Link } from "react-router-dom";
 
@@ -87,7 +88,7 @@ const Button = styled.a`
   text-align: center;
   text-decoration: none;
   font-weight: 600;
-  .fa {
+  [data-icon] {
     margin-right: 1rem;
   }
   &:hover,
@@ -281,7 +282,7 @@ class Download extends Component {
         <Content>
           <header>
             <div className="icon">
-              <span className="fa fa-download" />
+              <FontAwesomeIcon icon="file-download" />
             </div>
             <div className="text">
               <h2>Baixar para impressão</h2>
@@ -345,7 +346,7 @@ class Download extends Component {
             </SelectOutput>
           </section>
           <Button disabled={!selectedFormat} href={this._getUrl()}>
-            <span className="fa fa-file-pdf-o" />
+            <FontAwesomeIcon icon="file-pdf" />
             {!selectedFormat ? (
               "Selecione um formato"
             ) : (

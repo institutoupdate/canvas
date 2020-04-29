@@ -25,20 +25,6 @@ let plugins = [
       NODE_ENV: JSON.stringify(ENV),
     },
   }),
-  // new WebpackPwaManifest({
-  //   name: "IMPULSA Canvas",
-  //   short_name: "IMPULSA",
-  //   description: "Canvas Eleitoral",
-  //   background_color: "#e00a69",
-  //   orientation: "portrait",
-  //   start_url: "/?launcher=true",
-  //   icons: [
-  //     {
-  //       src: path.resolve("client", "images/launcher.png"),
-  //       sizes: [48, 96, 192, 256, 512],
-  //     },
-  //   ],
-  // }),
   new FaviconsWebpackPlugin({
     logo: path.resolve("client", "images/launcher.png"),
     favicons: {

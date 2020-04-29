@@ -3,9 +3,6 @@ import FlexCanvas from "react-flexcanvas";
 import Details from "components/Details";
 
 export default class Canvas extends React.Component {
-  componentDidMount() {
-    console.log("mounted");
-  }
   render() {
     return (
       <FlexCanvas>

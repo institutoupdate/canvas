@@ -1,8 +1,8 @@
 import React from "react";
 import FlexCanvas from "react-flexcanvas";
-import Details from "components/Details";
+import Details from "./Details";
 
-export default class Canvas extends React.Component {
+export default class ElectoralCanvas extends React.Component {
   render() {
     return (
       <FlexCanvas>

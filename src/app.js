@@ -38,6 +38,8 @@ if (!fs.existsSync(FILES_DIR)) {
 setTimeout(async () => {
   for (const format of FORMATS) {
     await render(null, "default", format);
+    await render("persona", null, format);
+    await render("identidade", null, format);
   }
   console.log("Files generated");
 }, 10000);

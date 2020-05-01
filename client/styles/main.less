@@ -30,7 +30,7 @@ h4 {
 
 #app-header {
   background: @mainColor;
-  border-bottom: 1px solid darken(@mainColor, 10%);
+  border-bottom: 1px solid darken(@mainColor, 15%);
   color: #fff;
   box-sizing: border-box;
   display: flex;
@@ -75,19 +75,30 @@ h4 {
   .divider {
     margin-left: auto;
   }
+  .header-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    .menu-toggle {
+      display: none;
+    }
+  }
   .header-nav {
-    margin-right: 4rem;
-    font-size: 0.9em;
-    a {
-      display: inline-block;
-      background: darken(@mainColor, 5%);
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5rem 1.5rem;
-      border-radius: 4px;
-      &:hover {
-        background: darken(@mainColor, 10%);
+    .header-nav-content {
+      display: flex;
+      font-size: 0.9em;
+      margin: 0 1rem 0 0;
+      a {
+        background: darken(@mainColor, 5%);
         color: #fff;
+        text-decoration: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 4px;
+        margin-left: 0.5rem;
+        &:hover {
+          background: darken(@mainColor, 10%);
+          color: #fff;
+        }
       }
     }
   }
@@ -102,7 +113,7 @@ h4 {
     }
     a {
       padding: 0.5rem 1rem;
-      margin: 0 0 0 1rem;
+      margin: 0;
       border-radius: 4px;
       color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
@@ -185,6 +196,34 @@ h4 {
       text-decoration: none;
     }
   }
+  .page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .page-description {
+      flex: 1 1 auto;
+      background: #af0852;
+      color: #fff;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #970747;
+      p {
+        font-size: 0.8em;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      p:first-child {
+        font-size: 1em;
+        color: #fff;
+      }
+    }
+    .canvas-container {
+      flex: 1 1 100%;
+    }
+  }
 }
 
 .data-canvas-container {
@@ -218,11 +257,11 @@ h4 {
   .canvas-container {
     background: #fff;
   }
-  .canvas-container:not(.with-data) {
-    transform: scale(0.9);
-    transform-origin: center;
-    animation: 0.3s ease-in 0.1s 1 pop forwards;
-  }
+  // .canvas-container:not(.with-data) {
+  //   transform: scale(0.9);
+  //   transform-origin: center;
+  //   animation: 0.3s ease-in 0.1s 1 pop forwards;
+  // }
   .data-canvas-container {
     width: 95%;
     margin: 0 auto;
@@ -262,6 +301,12 @@ h4 {
   }
 }
 
+@media only screen and (min-width: 701px) and (max-width: 800px) {
+  #app {
+    font-size: 0.8em;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .data-canvas-container {
     height: auto;
@@ -270,7 +315,7 @@ h4 {
       transform: scale(1) !important;
     }
   }
-  .container.download #app-header .download {
+  .container.download #app-header .header-content {
     display: none;
   }
   #app-header {
@@ -282,11 +327,40 @@ h4 {
     .label {
       display: none;
     }
-    .download {
+    .header-content {
       margin: 1rem 0 0;
+      width: 100%;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+      .menu-toggle {
+        display: block;
+        font-size: 1.2em;
+        margin-left: 1rem;
+      }
+      .header-nav {
+        flex: 0 0 auto;
+        display: none;
+        flex: 1 1 100%;
+        &.active {
+          display: block;
+        }
+        width: 100%;
+        .header-nav-content {
+          display: flex;
+          flex-direction: column;
+          margin: 0;
+          a {
+            margin: 1rem 0 0;
+          }
+        }
+      }
+    }
+    .download {
+      margin: 0;
       display: block;
       width: 100%;
       text-align: center;
+      flex: 1 1 80%;
       [data-icon] {
         display: none;
       }
@@ -299,8 +373,13 @@ h4 {
         }
       }
     }
-    .header-nav {
-      display: none;
+  }
+  .app-container {
+    .page {
+      display: block;
+      .page-description {
+        display: block;
+      }
     }
   }
   #app-footer {
@@ -354,6 +433,25 @@ h4 {
     }
     img.color {
       display: inline;
+    }
+  }
+  .app-container {
+    .page {
+      .page-description {
+        font-size: 0.9em;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        color: #333;
+        background: none;
+        align-items: flex-start;
+        padding: 0.3cm;
+        p:first-child {
+          color: #333;
+        }
+        p {
+          color: #666;
+        }
+      }
     }
   }
   .data-canvas-container {

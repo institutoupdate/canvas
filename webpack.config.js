@@ -1,64 +1,58 @@
 const path = require("path");
 const webpack = require("webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OfflinePlugin = require("offline-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
-const WebpackPwaManifest = require("webpack-pwa-manifest");
 
-const ENV = process.env.NODE_ENV;
+const ENV = process.env.NODE_ENV || "development";
 
-const hotMiddlewareScript =
-  "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true";
-
-let entry = ["./client/index.jsx"];
+let entry = [path.resolve("client")];
 let plugins = [
-  new HTMLWebpackPlugin({
-    template: path.resolve("client", "index.html"),
-    filename: "index.html",
-    inject: "body",
-  }),
   new webpack.DefinePlugin({
     "process.env": {
       NODE_ENV: JSON.stringify(ENV),
     },
   }),
-  new FaviconsWebpackPlugin({
-    logo: path.resolve("client", "images/launcher.png"),
-    favicons: {
-      appName: "IMPULSA Canvas",
-      appDescription: "Canvas Eleitoral",
-      background: "#e00a69",
-      theme_color: "#e00a69",
-    },
-  }),
 ];
 
+const htmlPlugin = new HTMLWebpackPlugin({
+  template: path.resolve(__dirname, "client", "index.html"),
+  filename: "index.html",
+  inject: "body",
+});
+
 if (ENV !== "production") {
-  plugins = [
-    ...plugins,
+  entry = entry.concat([
+    "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&overlay=false&reload=true",
+  ]);
+  plugins.unshift(htmlPlugin);
+  plugins = plugins.concat([
     new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
-  ];
-  entry = [...entry, hotMiddlewareScript];
+    new webpack.NoEmitOnErrorsPlugin(),
+  ]);
 } else {
-  plugins = [...plugins, new OfflinePlugin()];
+  plugins.unshift(
+    htmlPlugin,
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(__dirname, "client", "images/launcher.png"),
+      favicons: {
+        appName: "IMPULSA Canvas",
+        appDescription: "Canvas Eleitoral",
+        background: "#e00a69",
+        theme_color: "#e00a69",
+      },
+    })
+  );
+  plugins = plugins.concat([
+    new webpack.NoEmitOnErrorsPlugin(),
+    new OfflinePlugin(),
+  ]);
 }
 
 module.exports = {
-  devtool: "source-map",
+  mode: ENV,
+  devtool: "#source-map",
   entry,
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        test: /\.js(\?.*)?$/i,
-      }),
-    ],
-  },
   resolve: {
     alias: {
       react: "preact/compat",
@@ -68,9 +62,9 @@ module.exports = {
     modules: ["client", "node_modules"],
   },
   output: {
-    path: path.resolve("public"),
+    path: path.resolve(__dirname, "public"),
     publicPath: "/",
-    filename: function (...args) {
+    filename: function () {
       if (ENV == "production") {
         return "[name]-[hash].js";
       } else {

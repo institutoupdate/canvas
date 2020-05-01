@@ -9,7 +9,10 @@ import NotFound from "components/NotFound.jsx";
 import Header from "components/Header.jsx";
 import Footer from "components/Footer.jsx";
 
-import Canvas from "components/Canvas.jsx";
+import ElectoralCanvas from "canvas/Electoral";
+import PersonaCanvas from "canvas/Persona";
+import IdentityCanvas from "canvas/Identity";
+
 import Download from "components/Download.jsx";
 
 import "styles/canvas.less";
@@ -32,26 +35,18 @@ class App extends React.Component {
       appStyle = { overflow: "hidden" };
       className += " download";
     }
+    const downloadId = location.pathname.replace("/", "");
     return (
       <div className="container" className={className}>
         <Header />
         <div className="app-container" ref={this.containerRef} style={appStyle}>
           <Switch>
-            <Route exact path="/" component={Canvas} />
-            <Route
-              exact
-              path="/:id"
-              strict
-              render={({ match }) => {
-                if (!/\b[0-9a-f]{5,40}\b$/.test(match.params.id)) {
-                  return <NotFound />;
-                }
-                return <Canvas />;
-              }}
-            />
+            <Route exact path="/" component={ElectoralCanvas} />
+            <Route exact path="/persona" component={PersonaCanvas} />
+            <Route exact path="/identidade" component={IdentityCanvas} />
             <Route component={NotFound} />
           </Switch>
-          {query.get("download") ? <Download /> : null}
+          {query.get("download") ? <Download id={downloadId} /> : null}
         </div>
         <Footer />
       </div>

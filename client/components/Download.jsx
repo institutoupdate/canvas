@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { withRouter, matchPath, Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 const FORMATS = {
   A1: {

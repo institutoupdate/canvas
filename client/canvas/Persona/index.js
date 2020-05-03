@@ -22,8 +22,13 @@ export default class PersonaCanvas extends React.Component {
               title="Público"
               tip="Uma visão mais geral de um grupo de pessoas que você entende que é seu público. Descrever o gênero, faixa etária, estado civil, nível educacional, renda média, uso de internet etc."
               grow="2"
+              color="blue"
             />
-            <FlexCanvas.Item title="Persona (eleitora ideal)" grow="3">
+            <FlexCanvas.Item
+              title="Persona (eleitora ideal)"
+              grow="3"
+              color="orange"
+            >
               <FlexCanvas.Field
                 title="Quem?"
                 tip="Nome, idade, região que vive, onde trabalha, relação com a família, renda mensal."

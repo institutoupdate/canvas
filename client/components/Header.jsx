@@ -56,7 +56,7 @@ class Header extends React.Component {
             </Link>
           </h1>
           <h2>
-            <Link to="/">Canvas {this._getTitle()}</Link>
+            <Link to={location.pathname}>Canvas {this._getTitle()}</Link>
           </h2>
         </div>
         <div className="divider" />

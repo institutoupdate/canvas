@@ -53,12 +53,6 @@ Compiled server will be at `dist/`, while client will be compiled at `public/`.
 
 ---
 
-### Credits
-
-#### Authors
-
-- [Miguel Peixe](https://github.com/miguelpeixe)
-
 ### License
 
 MIT

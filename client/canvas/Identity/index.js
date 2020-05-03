@@ -19,7 +19,11 @@ export default class IdentityCanvas extends React.Component {
         </div>
         <FlexCanvas>
           <FlexCanvas.Row>
-            <FlexCanvas.Item title="Linguagem e tom de voz" grow="2">
+            <FlexCanvas.Item
+              title="Linguagem e tom de voz"
+              grow="2"
+              color="yellow"
+            >
               <FlexCanvas.Field
                 title="Singular ou plural"
                 tip="Sua comunicação vai usar “Eu faço/sou” ou “Nós fazemos/somos”?"
@@ -48,7 +52,7 @@ export default class IdentityCanvas extends React.Component {
                 tip="Quais são as cores que você acredita que transmitem a identidade da sua campanha?"
               />
             </FlexCanvas.Item>
-            <FlexCanvas.Item title="Mensagem-chave" grow="2">
+            <FlexCanvas.Item title="Mensagem-chave" grow="2" color="blue">
               <FlexCanvas.Field
                 title="Mensagem-chave 1"
                 tip="Desenvolva uma frase utilizando informações presentes no Canvas de Planejamento (Candidata, Princípios, Causa e Compromissos), no Canvas de Público (Motivação, Objetivos, Frustrações, Preocupações) e também utilizando os elementos de linguagem e tom deste Canvas. De forma resumida, faça o seguinte exercício: O que é realmente importante para a pessoa/Persona e como a sua história e conhecimento podem influenciar essa questão. Ajuste o tom que melhor funcione para dialogar com essa Persona."
@@ -61,6 +65,7 @@ export default class IdentityCanvas extends React.Component {
             <FlexCanvas.Item
               title="Canal de veiculação ou produtos"
               tip="Como essa mensagem vai chegar até a Persona? Onde essa Persona vai ter contato com a mensagem? Utilize as informações do item “O que faz”, no Canvas de Persona, para ajudar a pensar em formas, normais ou criativas, de fazer essa mensagem chegar até essa pessoa. Idealmente liste três canais e produtos e no máximo cinco."
+              color="green"
             ></FlexCanvas.Item>
           </FlexCanvas.Row>
         </FlexCanvas>

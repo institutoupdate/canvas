@@ -230,12 +230,6 @@ h4 {
 .data-canvas-container {
   width: 100%;
   height: 100%;
-  .data-canvas {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    box-shadow: 0 0 0;
-  }
 }
 
 .canvas-container {
@@ -252,43 +246,8 @@ h4 {
 }
 
 @media only screen and (min-width: 701px) {
-  body {
-    background: #333;
-  }
   .canvas-container {
     background: #fff;
-  }
-  // .canvas-container:not(.with-data) {
-  //   transform: scale(0.9);
-  //   transform-origin: center;
-  //   animation: 0.3s ease-in 0.1s 1 pop forwards;
-  // }
-  .data-canvas-container {
-    width: 95%;
-    margin: 0 auto;
-    .data-canvas {
-      // width: 42cm;
-      // height: 29.7cm;
-      width: 1587px;
-      height: 1123px;
-      margin: 4rem 0;
-      transform-origin: left top 0px;
-      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
-      -webkit-backface-visibility: hidden;
-      -webkit-font-smoothing: subpixel-antialiased;
-      .canvas-container {
-        border-radius: 6px;
-        .canvas-row.colored {
-          border-radius: 6px 6px 0 0;
-        }
-      }
-      .canvas-item:hover {
-        transform: scale(1.2);
-      }
-    }
-  }
-  #app-footer {
-    box-shadow: 0 0 5rem rgba(0, 0, 0, 0.5);
   }
 }
 

@@ -35,6 +35,7 @@ if (ENV !== "production") {
     htmlPlugin,
     new FaviconsWebpackPlugin({
       logo: path.resolve(__dirname, "client", "images/launcher.png"),
+      prefix: "icons/[hash]",
       favicons: {
         appName: "IMPULSA Canvas",
         appDescription: "Canvas Eleitoral",
@@ -45,7 +46,11 @@ if (ENV !== "production") {
   );
   plugins = plugins.concat([
     new webpack.NoEmitOnErrorsPlugin(),
-    new OfflinePlugin(),
+    new OfflinePlugin({
+      ServiceWorker: {
+        events: true,
+      },
+    }),
   ]);
 }
 
@@ -92,7 +97,7 @@ module.exports = {
       },
       {
         test: /fonts\/(.*)\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        use: "file-loader?name=fonts/[name].[ext]&publicPath=/",
+        use: "file-loader?name=fonts/[name].[hash].[ext]&publicPath=/",
       },
       {
         test: /\.(png|jpg|svg|gif|mp4)$/,

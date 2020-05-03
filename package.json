@@ -6,8 +6,10 @@
   "scripts": {
     "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "rm -rf public/* dist/*",
-    "build": "npm run setup && cross-env NODE_ENV=production webpack --config webpack.config.js --mode=production && babel src -d dist --copy-files",
+    "build": "npm run build:setup && npm run build:client && npm run build:server",
+    "build:setup": "rm -rf public/* dist/*",
+    "build:client": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode=production",
+    "build:server": "babel src -d dist --copy-files",
     "serve": "cross-env NODE_ENV=production node dist/index.js"
   },
   "repository": {

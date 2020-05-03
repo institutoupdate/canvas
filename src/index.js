@@ -1,14 +1,13 @@
 import express from "express";
 import path from "path";
 import webpackConfig from "../webpack.config.js";
-import canvas from "./app";
+import "./render";
 
 const ENV = process.env.NODE_ENV;
 const PORT = process.env.PORT || 8000;
 
 const app = express();
 
-app.use("/api", canvas);
 app.use("/files", express.static(path.join(__dirname, "../files")));
 
 if (ENV !== "production") {
@@ -21,14 +20,14 @@ if (ENV !== "production") {
   app.use(
     webpackDev(compiler, {
       logLevel: "warn",
-      publicPath: webpackConfig.output.publicPath
+      publicPath: webpackConfig.output.publicPath,
     })
   );
   app.use(
     webpackHot(compiler, {
       log: console.log,
       path: "/__webpack_hmr",
-      heartbeat: 10 * 1000
+      heartbeat: 10 * 1000,
     })
   );
 } else {

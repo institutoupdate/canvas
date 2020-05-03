@@ -1,5 +1,3 @@
-import express from "express";
-import bodyParser from "body-parser";
 import puppeteer from "puppeteer";
 import crypto from "crypto";
 import fs from "fs";
@@ -7,10 +5,7 @@ import Path from "path";
 import { exec } from "./utils";
 
 const PORT = process.env.PORT || 8000;
-
-const VERSION =
-  process.env.VERSION ||
-  require(Path.resolve(__dirname, "../package.json")).version;
+const WAIT = process.env.WAIT || 0;
 const FILES_DIR = Path.join(__dirname, "../files");
 const FORMATS = ["A3", "A2", "A1"];
 const MAP_FORMAT_SIZES = {
@@ -42,12 +37,7 @@ setTimeout(async () => {
     await render("identidade", null, format);
   }
   console.log("Files generated");
-}, 10000);
-
-const app = express();
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+}, WAIT);
 
 const getCanvasPath = (name, format) => {
   return Path.join(FILES_DIR, `canvas-${name}-${format}.pdf`);
@@ -87,5 +77,3 @@ const a4tile = async function (id, path, format) {
   }
   await exec(`pdfposter -mA4 -p${box[0]}x${box[1]}a4 ${path} ${output}`);
 };
-
-export default app;

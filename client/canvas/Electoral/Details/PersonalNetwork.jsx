@@ -24,7 +24,7 @@ export default () => (
       usar bem todas as possibilidades, você impulsionará sua campanha.
     </p>
 
-    <h3>Faça uma lista de influenciadores e seu alcance.</h3>
+    <h3>Faça uma lista de influenciadoras e seu alcance.</h3>
     <p>
       Pesquise as pessoas que têm mais seguidores, curtidas e compartilhamentos
       em suas postagens. Verifica também a afinidade entre as pautas de vocês e

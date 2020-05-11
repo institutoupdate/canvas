@@ -10,6 +10,7 @@ import Expense from "./Expense.jsx";
 import Funders from "./Funders.jsx";
 import PersonalNetwork from "./PersonalNetwork.jsx";
 import Channels from "./Channels.jsx";
+import VoteGoal from "./VoteGoal.jsx";
 
 export default class Details {
   static Candidate = Candidate;
@@ -24,4 +25,5 @@ export default class Details {
   static Funders = Funders;
   static PersonalNetwork = PersonalNetwork;
   static Channels = Channels;
+  static VoteGoal = VoteGoal;
 }

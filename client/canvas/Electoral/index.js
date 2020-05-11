@@ -73,16 +73,16 @@ export default class ElectoralCanvas extends React.Component {
                 <FlexCanvas.List title="Perfil" amount={3} />
               </FlexCanvas.Item>
               <FlexCanvas.Item
-                title="Diferenciais de campanha"
+                title="Concorrentes"
                 grow={1}
                 details={<Details.Assets />}
               >
-                <FlexCanvas.Field title="O que eu tenho que meus competidores não têm" />
+                <FlexCanvas.Field title="O que eu tenho que minhas concorrentes não têm" />
               </FlexCanvas.Item>
             </FlexCanvas.Row>
             <FlexCanvas.Row grow={1}>
               <FlexCanvas.Item
-                title="Quanto vai custar sua campanha?"
+                title="Custos da campanha"
                 grow={2.5}
                 color="green"
                 details={<Details.Expense />}
@@ -100,7 +100,11 @@ export default class ElectoralCanvas extends React.Component {
             </FlexCanvas.Row>
           </FlexCanvas.Column>
           <FlexCanvas.Column>
-            <FlexCanvas.Item grow="1" title="Meta de votos" />
+            <FlexCanvas.Item
+              grow="1"
+              title="Meta de votos"
+              details={<Details.VoteGoal />}
+            />
             <FlexCanvas.Item
               grow="5"
               title="Redes pessoais"
@@ -108,7 +112,7 @@ export default class ElectoralCanvas extends React.Component {
             >
               <FlexCanvas.Field title="30 primeiros votos" grow="2" />
               <FlexCanvas.Field title="10 pessoas que se envolverão na campanha" />
-              <FlexCanvas.Field title="Influenciadores ao seu alcance" />
+              <FlexCanvas.Field title="Influenciadoras ao seu alcance" />
             </FlexCanvas.Item>
             <FlexCanvas.Item
               grow="3"

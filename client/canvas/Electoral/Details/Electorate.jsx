@@ -2,21 +2,24 @@ import React from "react";
 
 export default () => (
   <div>
-    <p>Descreva aqui três eleitores potenciais de nichos diferentes.</p>
+    <p>Descreva aqui três eleitoras potenciais de nichos diferentes.</p>
+
     <p>
-      A ideia é você descrever um eleitor ou eleitora real, alguém com nome e
-      sobrenome que você sabia que vai votar em você e depois generalizar as
-      caracteristicas dessa pessoa para encontrar "tipos" de eleitores.
+      A ideia é você descrever uma eleitora ou eleitor real, alguém com nome e
+      sobrenome que você sabia que vai votar em você. Depois, generalize as
+      características dessa pessoa para encontrar "tipos" de eleitoras. Exemplo:
     </p>
-    <p>
-      "Rodrigo, branco, 26 anos, morador de Pinheiros, é estudante universitário
-      da PUC e cursa administração pública vai votar em mim porque acredita que
-      eu tenho experiência de gestão pública"
-    </p>
+
     <p>
       "Flávia, negra, 33 anos, mora na Lapa, é mãe solo e trabalha com
-      comunicação, vai votar em mim porque reconhece em mim uma feminista
-      preocupada com a infância"
+      comunicação. Vai votar em mim porque reconhece em mim uma feminista
+      preocupada com a infância."
+    </p>
+
+    <p>
+      "Rodrigo, branco, 26 anos, morador de Pinheiros, é estudante universitário
+      e cursa administração pública na PUC. Vai votar em mim porque acredita que
+      eu tenho experiência em gestão pública."
     </p>
   </div>
 );

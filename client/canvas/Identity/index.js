@@ -55,16 +55,30 @@ export default class IdentityCanvas extends React.Component {
             <FlexCanvas.Item title="Mensagem-chave" grow="2" color="blue">
               <FlexCanvas.Field
                 title="Mensagem-chave 1"
-                tip="Desenvolva uma frase utilizando informações presentes no Canvas de Planejamento (Candidata, Princípios, Causa e Compromissos), no Canvas de Público (Motivação, Objetivos, Frustrações, Preocupações) e também utilizando os elementos de linguagem e tom deste Canvas. De forma resumida, faça o seguinte exercício: O que é realmente importante para a pessoa/Persona e como a sua história e conhecimento podem influenciar essa questão. Ajuste o tom que melhor funcione para dialogar com essa Persona."
+                tip="Desenvolva uma frase utilizando informações presentes no Canvas Eleitoral (Princípios, Candidata, Causas e Compromissos), no Canvas Persona (Motivação, Objetivos, Frustrações, Preocupações) e também utilizando os elementos de linguagem e tom deste Canvas Identidade. De forma resumida, faça o seguinte exercício: O que é realmente importante para a eleitora e como a minha história e conhecimento podem influenciar essa questão? Ajuste o tom que melhor funcione para dialogar com ela."
               />
               <FlexCanvas.Field
                 title="Mensagem chave 2"
-                tip="Desenvolva uma segunda frase utilizando informações presentes no Canvas de Planejamento (Candidata, Princípios, Causa e Compromissos), no Canvas de Público (Motivação, Objetivos, Frustrações, Preocupações) e também utilizando os elementos de linguagem e tom deste Canvas. De forma resumida, faça o seguinte exercício: O que é realmente importante para a pessoa/Persona e como a sua história e conhecimento podem influenciar essa questão. Ajuste o tom que melhor funcione para dialogar com essa Persona."
+                tip="Desenvolva uma segunda frase utilizando informações presentes no Canvas Eleitoral (Princípios, Candidata, Causas e Compromissos), no Canvas Persona (Motivação, Objetivos, Frustrações, Preocupações) e também utilizando os elementos de linguagem e tom deste Canvas Identidade. De forma resumida, faça o seguinte exercício: O que é realmente importante para a eleitora e como a minha história e conhecimento podem influenciar essa questão? Ajuste o tom que melhor funcione para dialogar com ela."
               />
             </FlexCanvas.Item>
             <FlexCanvas.Item
-              title="Canal de veiculação ou produtos"
-              tip="Como essa mensagem vai chegar até a Persona? Onde essa Persona vai ter contato com a mensagem? Utilize as informações do item “O que faz”, no Canvas de Persona, para ajudar a pensar em formas, normais ou criativas, de fazer essa mensagem chegar até essa pessoa. Idealmente liste três canais e produtos e no máximo cinco."
+              title="Canais de Comunicação"
+              tip={
+                <span>
+                  Como essa mensagem vai chegar até a eleitora? Onde e como a
+                  eleitora vai ter contato com sua mensagem? Utilize as
+                  informações do item “O que faz”, no Canvas Persona, para
+                  ajudar a pensar em formas, normais ou criativas, de fazer essa
+                  mensagem chegar até a eleitora. Idealmente liste três canais
+                  prioritários, como "Panfletagem", "Roda de conversa" e "Redes
+                  Sociais".
+                  <br />
+                  <br />
+                  Para mais informações sobre canais, consulte as Guias de
+                  Comunicação e Mobilização na Plataforma Im.pulsa.
+                </span>
+              }
               color="green"
             ></FlexCanvas.Item>
           </FlexCanvas.Row>

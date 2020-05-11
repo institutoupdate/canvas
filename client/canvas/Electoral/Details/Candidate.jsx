@@ -5,14 +5,13 @@ export default () => (
     <h4>Caracteristica positiva</h4>
     <p>
       Liste aqui uma característica positiva que te diferencie, algo que - do
-      ponto de vista eleitoral - você acredite que é um valor que vá atrair os
-      eleitores:
+      ponto de vista eleitoral - você acredite que é um valor que vá atrair as eleitoras:
     </p>
     <p>"Eu votaria na candidata por que ela é __________"</p>
     <h4>Caracteristica negativa</h4>
     <p>
       Liste aqui uma característica negativa, algo que - do ponto de vista
-      eleitoral - você acredite que é vá afastar os eleitores:
+      eleitoral - você acredite que é vá afastar as eleitoras:
     </p>
     <p>
       "Eu não votaria na candidata por que ela é _________"<br />
@@ -41,7 +40,7 @@ export default () => (
     </p>
     <p>
       O valor desse exercício está em tentar encontrar narrativas simples e
-      diretas que possam conectar você com seus eleitores. Contando de maneira
+      diretas que possam conectar você com suas eleitoras. Contando de maneira
       menos abstrata como você pensa e age no mundo.
     </p>
   </div>

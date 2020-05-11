@@ -11,5 +11,9 @@ export default () => (
       contas, mas por enquanto, um chute inicial já te ajuda a concretizar as
       ideias.
     </p>
+    <p>
+      Quando for montar seu orçamento detalhado, consulte a Guia e a Ferramenta
+      <i>Orçamento de campanha</i> na Plataforma Im.pulsa.
+    </p>
   </div>
 );

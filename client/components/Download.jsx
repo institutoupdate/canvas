@@ -185,9 +185,12 @@ const PaperSelector = styled.div`
           padding: 0.5rem;
         }
         .name {
-          font-weight: 600;
           font-size: 1.2em;
           margin: 0 1rem;
+          font-family: "Peace Sans";
+          font-weight: normal !important;
+          text-transform: uppercase;
+          letter-spacing: 0;
         }
         .size {
           font-size: 0.8em;

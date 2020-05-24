@@ -97,7 +97,7 @@ module.exports = {
       },
       {
         test: /fonts\/(.*)\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        use: "file-loader?name=fonts/[name].[hash].[ext]&publicPath=/",
+        use: "file-loader?name=assets/[name].[hash].[ext]&publicPath=/",
       },
       {
         test: /\.(png|jpg|svg|gif|mp4)$/,

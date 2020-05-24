@@ -1,5 +1,14 @@
 @import "colors";
 
+@font-face {
+  font-family: "Peace Sans";
+  src: url("../fonts/subset-PeaceSans.woff2") format("woff2"),
+    url("../fonts/subset-PeaceSans.woff") format("woff"),
+    url("../fonts/subset-PeaceSans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body,
 #app,
@@ -8,6 +17,7 @@ body,
   height: 100%;
   overflow: hidden;
   text-rendering: optimizeLegibility;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
 }
 
 .container {
@@ -21,7 +31,13 @@ body,
 
 h1,
 h2,
-h3,
+h3 {
+  font-family: "Peace Sans";
+  font-weight: normal !important;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
 h4 {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
@@ -84,6 +100,7 @@ h4 {
     }
   }
   .header-nav {
+    font-weight: 600;
     .header-nav-content {
       display: flex;
       font-size: 0.9em;

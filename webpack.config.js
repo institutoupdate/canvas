@@ -48,6 +48,7 @@ if (ENV !== "production") {
   plugins = plugins.concat([
     new webpack.NoEmitOnErrorsPlugin(),
     new OfflinePlugin({
+      excludes: ["**/.*", "**/*.map", "**/*.gz", "**/*.html"],
       ServiceWorker: {
         events: true,
       },

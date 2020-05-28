@@ -42,6 +42,7 @@ Access http://localhost:8000/
 
 - `NODE_ENV` - Either development or production. _Default to `development`_
 - `PORT` - Port to start the server. _Default to `8000`_
+- `GA_TRACKING_ID` - Google Analytics Tracking ID. _Default to `undefined`_
 
 ---
 

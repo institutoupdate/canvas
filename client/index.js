@@ -24,6 +24,8 @@ if (process.env.NODE_ENV == "production") {
   });
 }
 
+import { createBrowserHistory } from "history";
+
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faBars,
@@ -37,13 +39,48 @@ library.add(faFileDownload);
 library.add(faFilePdf);
 library.add(faGithub);
 
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
 
 import Application from "Application.jsx";
 
+// GA
+const gaTracking = process.env.GA_TRACKING_ID;
+if (gaTracking) {
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "https://www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", gaTracking, "auto");
+  ga("send", "pageview");
+}
+
+const history = createBrowserHistory();
+history.listen((location) => {
+  if (window.ga) {
+    window.ga("set", "page", location.pathname + location.search);
+    window.ga("send", "pageview");
+  }
+});
+
 ReactDom.render(
-  <BrowserRouter>
+  <Router history={history}>
     <Application />
-  </BrowserRouter>,
+  </Router>,
   document.getElementById("app")
 );

@@ -11,6 +11,7 @@ let plugins = [
   new webpack.DefinePlugin({
     "process.env": {
       NODE_ENV: JSON.stringify(ENV),
+      GA_TRACKING_ID: JSON.stringify(process.env.GA_TRACKING_ID),
     },
   }),
 ];

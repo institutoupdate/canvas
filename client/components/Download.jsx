@@ -301,6 +301,11 @@ class Download extends Component {
     }
     return `/files/${filename}.pdf`;
   };
+  _handleDownloadClick = (ev) => {
+    if (window.ga) {
+      window.ga("send", "event", "Downloads", "PDF", this._getUrl());
+    }
+  };
   _handleCloseClick = (ev) => {
     ev.preventDefault();
     const { onClose } = this.props;
@@ -378,7 +383,11 @@ class Download extends Component {
               </label>
             </SelectOutput>
           </section>
-          <Button disabled={!selectedFormat} href={this._getUrl()}>
+          <Button
+            disabled={!selectedFormat}
+            href={this._getUrl()}
+            onClick={this._handleDownloadClick}
+          >
             <FontAwesomeIcon icon="file-pdf" />
             {!selectedFormat ? (
               "Selecione um formato"
